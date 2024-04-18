@@ -28,12 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            txtVideoUrl = new TextBox();
+            btnGetVideoData = new Button();
+            SuspendLayout();
+            // 
+            // txtVideoUrl
+            // 
+            txtVideoUrl.Location = new Point(12, 12);
+            txtVideoUrl.Name = "txtVideoUrl";
+            txtVideoUrl.PlaceholderText = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+            txtVideoUrl.Size = new Size(329, 23);
+            txtVideoUrl.TabIndex = 1;
+            txtVideoUrl.TabStop = false;
+            // 
+            // btnGetVideoData
+            // 
+            btnGetVideoData.Location = new Point(347, 12);
+            btnGetVideoData.Name = "btnGetVideoData";
+            btnGetVideoData.Size = new Size(75, 23);
+            btnGetVideoData.TabIndex = 2;
+            btnGetVideoData.TabStop = false;
+            btnGetVideoData.Text = "Get Data";
+            btnGetVideoData.UseVisualStyleBackColor = true;
+            btnGetVideoData.Click += btnGetVideoData_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(646, 336);
+            Controls.Add(btnGetVideoData);
+            Controls.Add(txtVideoUrl);
+            Name = "Form1";
+            Text = "Youtube Downloader";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox txtVideoUrl;
+        private Button btnGetVideoData;
     }
 }
