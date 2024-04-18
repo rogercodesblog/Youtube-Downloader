@@ -43,6 +43,7 @@ namespace YoutubeDownloader
                 MessageBox.Show("The provided video Url is not valid", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             try
             {
                 Video = await YoutubeClient.Videos.GetAsync(url);
@@ -57,6 +58,8 @@ namespace YoutubeDownloader
             {
                 MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
         }
 
 
