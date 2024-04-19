@@ -33,14 +33,14 @@
             selectVideoQuality = new ComboBox();
             lblTitle = new Label();
             btnDownloadVideo = new Button();
-            pictureBox1 = new PictureBox();
+            imgVideoThumbnail = new PictureBox();
             btnDownloadThumbnail = new Button();
             selectThumbnailQuality = new ComboBox();
             label2 = new Label();
             label3 = new Label();
             label1 = new Label();
             label4 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imgVideoThumbnail).BeginInit();
             SuspendLayout();
             // 
             // txtVideoUrl
@@ -95,13 +95,14 @@
             btnDownloadVideo.Text = "Download";
             btnDownloadVideo.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // imgVideoThumbnail
             // 
-            pictureBox1.Location = new Point(106, 84);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(275, 155);
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            imgVideoThumbnail.Location = new Point(106, 84);
+            imgVideoThumbnail.Name = "imgVideoThumbnail";
+            imgVideoThumbnail.Size = new Size(275, 155);
+            imgVideoThumbnail.SizeMode = PictureBoxSizeMode.StretchImage;
+            imgVideoThumbnail.TabIndex = 6;
+            imgVideoThumbnail.TabStop = false;
             // 
             // btnDownloadThumbnail
             // 
@@ -171,7 +172,7 @@
             Controls.Add(label2);
             Controls.Add(btnDownloadThumbnail);
             Controls.Add(selectThumbnailQuality);
-            Controls.Add(pictureBox1);
+            Controls.Add(imgVideoThumbnail);
             Controls.Add(btnDownloadVideo);
             Controls.Add(lblTitle);
             Controls.Add(selectVideoQuality);
@@ -179,7 +180,7 @@
             Controls.Add(txtVideoUrl);
             Name = "Form1";
             Text = "Youtube Downloader";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imgVideoThumbnail).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -191,7 +192,7 @@
         private ComboBox selectVideoQuality;
         private Label lblTitle;
         private Button btnDownloadVideo;
-        private PictureBox pictureBox1;
+        private PictureBox imgVideoThumbnail;
         private Button btnDownloadThumbnail;
         private ComboBox selectThumbnailQuality;
         private Label label2;
