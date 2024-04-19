@@ -1,7 +1,9 @@
+using System.Runtime.InteropServices.Marshalling;
 using System.Text.RegularExpressions;
 using YoutubeExplode;
 using YoutubeExplode.Common;
 using YoutubeExplode.Videos;
+using YoutubeExplode.Videos.Streams;
 using static System.Net.WebRequestMethods;
 
 namespace YoutubeDownloader
@@ -27,12 +29,12 @@ namespace YoutubeDownloader
 
         private void btnDownloadThumbnail_Click(object sender, EventArgs e)
         {
-
+            DownloadThumbnail();
         }
 
         private void btnDownloadVideo_Click(object sender, EventArgs e)
         {
-
+            DownloadVideo();
         }
 
         //TODO: Add a CSV for saving configurations and a custom output directory
@@ -88,6 +90,40 @@ namespace YoutubeDownloader
             btnGetVideoData.Enabled = true;
         }
 
+        private async Task DownloadThumbnail()
+        {
 
+        }
+        //Todo;
+        //Let user select file name, or add a (1) / (2) and so on at the end
+        //Verify if a file of same name exists
+        private async Task DownloadVideo()
+        {
+            btnDownloadVideo.Enabled = false;
+            try
+            {
+                using (HttpClient httpclient = new HttpClient())
+                {
+                    MuxedStreamInfo info = selectVideoQuality.SelectedItem as MuxedStreamInfo;
+
+                    var stream = await httpclient.GetStreamAsync(info.Url);
+
+                    string outputFilePath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.{info.Container}");
+
+                    using var outputStream = System.IO.File.Create(outputFilePath);
+
+                    await stream.CopyToAsync(outputStream);
+
+                    MessageBox.Show("File Downloaded!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnDownloadVideo.Enabled = false;
+                return;
+            }
+            btnDownloadVideo.Enabled = true;
+        }
     }
 }
