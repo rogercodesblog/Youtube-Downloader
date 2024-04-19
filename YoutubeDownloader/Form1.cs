@@ -47,6 +47,7 @@ namespace YoutubeDownloader
             if (string.IsNullOrEmpty(url))
             {
                 MessageBox.Show("The url is cannot be empty", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnGetVideoData.Enabled = true;
                 return;
             }
 
@@ -54,6 +55,7 @@ namespace YoutubeDownloader
             if (!Regex.IsMatch(url, "^((?:https?:)?\\/\\/)?((?:www|m)\\.)?((?:youtube\\.com|youtu.be))(\\/(?:[\\w\\-]+\\?v=|embed\\/|v\\/)?)([\\w\\-]+)(\\S+)?$"))
             {
                 MessageBox.Show("The provided video Url is not valid", "Caution", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnGetVideoData.Enabled = true;
                 return;
             }
 
@@ -70,6 +72,7 @@ namespace YoutubeDownloader
             catch (Exception ex)
             {
                 MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnGetVideoData.Enabled = true;
             }
 
             lblTitle.Text = NormalizedTitle;
