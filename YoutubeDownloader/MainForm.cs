@@ -9,14 +9,14 @@ using static System.Net.WebRequestMethods;
 
 namespace YoutubeDownloader
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private string OutputDirectory;
         private string NormalizedTitle;
         YoutubeClient YoutubeClient;
         YoutubeExplode.Videos.Video Video;
         List<YoutubeExplode.Videos.Streams.MuxedStreamInfo> MuxedStreamInfo;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             SetOutputDirectory();

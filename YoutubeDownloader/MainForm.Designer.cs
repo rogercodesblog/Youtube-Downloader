@@ -1,6 +1,6 @@
 ﻿namespace YoutubeDownloader
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -163,7 +163,7 @@
             label4.TabIndex = 12;
             label4.Text = "Youtube Video Downloader";
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -180,7 +180,7 @@
             Controls.Add(selectVideoQuality);
             Controls.Add(btnGetVideoData);
             Controls.Add(txtVideoUrl);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "Youtube Downloader";
             ((System.ComponentModel.ISupportInitialize)imgVideoThumbnail).EndInit();
             ResumeLayout(false);
