@@ -25,6 +25,16 @@ namespace YoutubeDownloader
             GetVideoData(txtVideoUrl.Text);
         }
 
+        private void btnDownloadThumbnail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDownloadVideo_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //TODO: Add a CSV for saving configurations and a custom output directory
         private void SetOutputDirectory()
         {
@@ -57,7 +67,7 @@ namespace YoutubeDownloader
 
                 MuxedStreamInfo = streamManifest.GetMuxedStreams().OrderByDescending(video => video.VideoQuality).ToList();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -74,7 +84,6 @@ namespace YoutubeDownloader
             btnDownloadVideo.Enabled = true;
             btnGetVideoData.Enabled = true;
         }
-
 
 
     }

@@ -94,6 +94,7 @@
             btnDownloadVideo.TabStop = false;
             btnDownloadVideo.Text = "Download";
             btnDownloadVideo.UseVisualStyleBackColor = true;
+            btnDownloadVideo.Click += btnDownloadVideo_Click;
             // 
             // imgVideoThumbnail
             // 
@@ -114,6 +115,7 @@
             btnDownloadThumbnail.TabStop = false;
             btnDownloadThumbnail.Text = "Download";
             btnDownloadThumbnail.UseVisualStyleBackColor = true;
+            btnDownloadThumbnail.Click += btnDownloadThumbnail_Click;
             // 
             // selectThumbnailQuality
             // 
