@@ -1,3 +1,4 @@
+using System.Net.Http;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text.RegularExpressions;
 using YoutubeExplode;
@@ -75,6 +76,7 @@ namespace YoutubeDownloader
             {
                 MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnGetVideoData.Enabled = true;
+                return;
             }
 
             lblTitle.Text = NormalizedTitle;
@@ -89,10 +91,38 @@ namespace YoutubeDownloader
             btnDownloadVideo.Enabled = true;
             btnGetVideoData.Enabled = true;
         }
-
+        //Todo;
+        //Let user select file name, or add a (1) / (2) and so on at the end
+        //Verify if a file of same name exists
         private async Task DownloadThumbnail()
         {
+            btnDownloadThumbnail.Enabled = false;
+            try
+            {
+                using(HttpClient httpClient = new HttpClient())
+                {
+                    var info = selectThumbnailQuality.SelectedItem as YoutubeExplode.Common.Thumbnail;
 
+                    var stream = await httpClient.GetStreamAsync(info.Url);
+
+                    //Todo; not all files are jpg, some of them are webp but still work, sort this out.
+
+                    string outputFilePath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.jpg");
+
+                    using var outputStream = System.IO.File.Create(outputFilePath);
+
+                    await stream.CopyToAsync(outputStream);
+
+                    MessageBox.Show("File Downloaded!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnDownloadThumbnail.Enabled = true;
+                return;
+            }
+            btnDownloadThumbnail.Enabled = true;
         }
         //Todo;
         //Let user select file name, or add a (1) / (2) and so on at the end
@@ -120,7 +150,7 @@ namespace YoutubeDownloader
             catch (Exception ex)
             {
                 MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnDownloadVideo.Enabled = false;
+                btnDownloadVideo.Enabled = true;
                 return;
             }
             btnDownloadVideo.Enabled = true;
