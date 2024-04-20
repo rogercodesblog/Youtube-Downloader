@@ -66,6 +66,7 @@
             // 
             // selectVideoQuality
             // 
+            selectVideoQuality.DropDownStyle = ComboBoxStyle.DropDownList;
             selectVideoQuality.Enabled = false;
             selectVideoQuality.FormattingEnabled = true;
             selectVideoQuality.Location = new Point(87, 281);
@@ -119,6 +120,7 @@
             // 
             // selectThumbnailQuality
             // 
+            selectThumbnailQuality.DropDownStyle = ComboBoxStyle.DropDownList;
             selectThumbnailQuality.Enabled = false;
             selectThumbnailQuality.FormattingEnabled = true;
             selectThumbnailQuality.Location = new Point(87, 253);
