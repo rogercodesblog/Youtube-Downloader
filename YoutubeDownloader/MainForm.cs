@@ -106,8 +106,9 @@ namespace YoutubeDownloader
                     var stream = await httpClient.GetStreamAsync(info.Url);
 
                     //Todo; not all files are jpg, some of them are webp but still work, sort this out.
+                    string fullfilepath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.jpg");
 
-                    string outputFilePath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.jpg");
+                    string outputFilePath = CreateFileName(fullfilepath);
 
                     using var outputStream = System.IO.File.Create(outputFilePath);
 
@@ -138,7 +139,9 @@ namespace YoutubeDownloader
 
                     var stream = await httpclient.GetStreamAsync(info.Url);
 
-                    string outputFilePath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.{info.Container}");
+                    string fullfilepath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.{info.Container}");
+
+                    string outputFilePath = CreateFileName(fullfilepath);
 
                     using var outputStream = System.IO.File.Create(outputFilePath);
 
@@ -154,6 +157,43 @@ namespace YoutubeDownloader
                 return;
             }
             btnDownloadVideo.Enabled = true;
+        }
+
+        private string CreateFileName(string providedfile)
+        {
+
+            if (!System.IO.File.Exists(providedfile))
+            {
+                return providedfile;
+            }
+
+            byte filenumber = 0;
+            string newfilename = string.Empty;
+
+            var filename = Path.GetFileNameWithoutExtension(providedfile);
+            var filenameextension = Path.GetExtension(providedfile);
+            var filelocation = new FileInfo(providedfile).Directory.FullName;
+            
+            do
+            {
+
+                if (filenumber >= 254)
+                {
+                    throw new OverflowException("There are too many files with the same name");
+                }
+
+                filenumber++;
+                newfilename = $"{filelocation}\\{filename}({filenumber}){filenameextension}";
+
+                if (!System.IO.File.Exists(newfilename))
+                {
+                    break;
+                }
+
+            }
+            while(true);
+
+            return newfilename;
         }
     }
 }
