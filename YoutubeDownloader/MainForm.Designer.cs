@@ -52,7 +52,7 @@
             txtVideoUrl.MinimumSize = new Size(314, 24);
             txtVideoUrl.Name = "txtVideoUrl";
             txtVideoUrl.PlaceholderText = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-            txtVideoUrl.Size = new Size(314, 24);
+            txtVideoUrl.Size = new Size(314, 16);
             txtVideoUrl.TabIndex = 1;
             txtVideoUrl.TabStop = false;
             // 
@@ -96,6 +96,7 @@
             lblTitle.TabIndex = 4;
             lblTitle.Text = "Waiting for video...";
             lblTitle.Visible = false;
+            lblTitle.TextChanged += lblTitle_TextChanged;
             // 
             // btnDownloadVideo
             // 
@@ -105,7 +106,7 @@
             btnDownloadVideo.FlatStyle = FlatStyle.Flat;
             btnDownloadVideo.Font = new Font("Tahoma", 9.75F);
             btnDownloadVideo.ForeColor = Color.White;
-            btnDownloadVideo.Location = new Point(407, 337);
+            btnDownloadVideo.Location = new Point(407, 338);
             btnDownloadVideo.Name = "btnDownloadVideo";
             btnDownloadVideo.Size = new Size(85, 30);
             btnDownloadVideo.TabIndex = 5;
@@ -186,10 +187,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Tahoma", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(63, 15);
+            label4.Font = new Font("Microsoft YaHei UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(32, 17);
             label4.Name = "label4";
-            label4.Size = new Size(401, 39);
+            label4.Size = new Size(440, 41);
             label4.TabIndex = 12;
             label4.Text = "Youtube Video Downloader";
             // 

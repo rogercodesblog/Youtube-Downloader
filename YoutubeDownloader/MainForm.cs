@@ -99,7 +99,7 @@ namespace YoutubeDownloader
             btnDownloadThumbnail.Enabled = false;
             try
             {
-                using(HttpClient httpClient = new HttpClient())
+                using (HttpClient httpClient = new HttpClient())
                 {
                     var info = selectThumbnailQuality.SelectedItem as YoutubeExplode.Common.Thumbnail;
 
@@ -173,7 +173,7 @@ namespace YoutubeDownloader
             var filename = Path.GetFileNameWithoutExtension(providedfile);
             var filenameextension = Path.GetExtension(providedfile);
             var filelocation = new FileInfo(providedfile).Directory.FullName;
-            
+
             do
             {
 
@@ -191,9 +191,17 @@ namespace YoutubeDownloader
                 }
 
             }
-            while(true);
+            while (true);
 
             return newfilename;
+        }
+
+        private void lblTitle_TextChanged(object sender, EventArgs e)
+        {
+            if (NormalizedTitle.Count() > 75)
+            {
+                lblTitle.Text = $"{NormalizedTitle.Substring(0, 75)}...";
+            }
         }
     }
 }
