@@ -64,6 +64,8 @@ namespace YoutubeDownloader
 
             try
             {
+                btnGetVideoData.Text = "Loading...";
+
                 Video = await YoutubeClient.Videos.GetAsync(url);
 
                 NormalizedTitle = string.Join("_", Video.Title.Split(Path.GetInvalidFileNameChars()));
@@ -76,6 +78,7 @@ namespace YoutubeDownloader
             {
                 MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnGetVideoData.Enabled = true;
+                btnGetVideoData.Text = "Get Data";
                 return;
             }
 
@@ -90,6 +93,7 @@ namespace YoutubeDownloader
             btnDownloadThumbnail.Enabled = true;
             btnDownloadVideo.Enabled = true;
             btnGetVideoData.Enabled = true;
+            btnGetVideoData.Text = "Get Data";
         }
         //Todo;
         //Let user select file name, or add a (1) / (2) and so on at the end

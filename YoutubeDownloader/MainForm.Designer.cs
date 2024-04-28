@@ -77,6 +77,7 @@
             // 
             // selectVideoQuality
             // 
+            selectVideoQuality.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             selectVideoQuality.BackColor = Color.FromArgb(16, 168, 171);
             selectVideoQuality.DropDownStyle = ComboBoxStyle.DropDownList;
             selectVideoQuality.Enabled = false;
@@ -104,6 +105,7 @@
             // 
             // btnDownloadVideo
             // 
+            btnDownloadVideo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnDownloadVideo.BackColor = Color.FromArgb(16, 168, 171);
             btnDownloadVideo.Cursor = Cursors.Hand;
             btnDownloadVideo.Enabled = false;
@@ -121,6 +123,7 @@
             // 
             // imgVideoThumbnail
             // 
+            imgVideoThumbnail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             imgVideoThumbnail.Location = new Point(116, 131);
             imgVideoThumbnail.Name = "imgVideoThumbnail";
             imgVideoThumbnail.Size = new Size(275, 155);
@@ -130,6 +133,7 @@
             // 
             // btnDownloadThumbnail
             // 
+            btnDownloadThumbnail.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnDownloadThumbnail.BackColor = Color.FromArgb(16, 168, 171);
             btnDownloadThumbnail.Cursor = Cursors.Hand;
             btnDownloadThumbnail.Enabled = false;
@@ -147,6 +151,7 @@
             // 
             // selectThumbnailQuality
             // 
+            selectThumbnailQuality.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             selectThumbnailQuality.BackColor = Color.FromArgb(16, 168, 171);
             selectThumbnailQuality.DropDownStyle = ComboBoxStyle.DropDownList;
             selectThumbnailQuality.Enabled = false;
@@ -162,9 +167,10 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 9.75F);
-            label2.Location = new Point(13, 299);
+            label2.Location = new Point(13, 302);
             label2.Name = "label2";
             label2.Size = new Size(72, 16);
             label2.TabIndex = 9;
@@ -172,9 +178,10 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 9.75F);
-            label3.Location = new Point(13, 344);
+            label3.Location = new Point(13, 345);
             label3.Name = "label3";
             label3.Size = new Size(44, 16);
             label3.TabIndex = 10;
@@ -192,13 +199,15 @@
             // 
             // label4
             // 
-            label4.AutoSize = true;
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Microsoft YaHei UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(80, 19);
             label4.Name = "label4";
             label4.Size = new Size(342, 41);
             label4.TabIndex = 12;
             label4.Text = "Youtube Downloader";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
