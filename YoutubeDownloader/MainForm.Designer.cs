@@ -219,7 +219,7 @@
             Controls.Add(btnGetVideoData);
             Controls.Add(txtVideoUrl);
             ForeColor = SystemColors.ControlLightLight;
-            MinimumSize = new Size(520, 390);
+            MinimumSize = new Size(520, 420);
             Name = "MainForm";
             Text = "Youtube Downloader";
             ((System.ComponentModel.ISupportInitialize)imgVideoThumbnail).EndInit();
