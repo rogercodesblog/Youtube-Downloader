@@ -46,13 +46,15 @@
             // txtVideoUrl
             // 
             txtVideoUrl.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtVideoUrl.BackColor = Color.FromArgb(16, 168, 171);
             txtVideoUrl.BorderStyle = BorderStyle.None;
             txtVideoUrl.Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtVideoUrl.ForeColor = Color.White;
             txtVideoUrl.Location = new Point(87, 73);
             txtVideoUrl.MinimumSize = new Size(314, 24);
             txtVideoUrl.Name = "txtVideoUrl";
             txtVideoUrl.PlaceholderText = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-            txtVideoUrl.Size = new Size(314, 16);
+            txtVideoUrl.Size = new Size(314, 24);
             txtVideoUrl.TabIndex = 1;
             txtVideoUrl.TabStop = false;
             // 
@@ -75,10 +77,12 @@
             // 
             // selectVideoQuality
             // 
+            selectVideoQuality.BackColor = Color.FromArgb(16, 168, 171);
             selectVideoQuality.DropDownStyle = ComboBoxStyle.DropDownList;
             selectVideoQuality.Enabled = false;
             selectVideoQuality.FlatStyle = FlatStyle.Flat;
             selectVideoQuality.Font = new Font("Tahoma", 9.75F);
+            selectVideoQuality.ForeColor = Color.White;
             selectVideoQuality.FormattingEnabled = true;
             selectVideoQuality.Location = new Point(87, 341);
             selectVideoQuality.Name = "selectVideoQuality";
@@ -117,7 +121,7 @@
             // 
             // imgVideoThumbnail
             // 
-            imgVideoThumbnail.Location = new Point(126, 131);
+            imgVideoThumbnail.Location = new Point(116, 131);
             imgVideoThumbnail.Name = "imgVideoThumbnail";
             imgVideoThumbnail.Size = new Size(275, 155);
             imgVideoThumbnail.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -143,10 +147,12 @@
             // 
             // selectThumbnailQuality
             // 
+            selectThumbnailQuality.BackColor = Color.FromArgb(16, 168, 171);
             selectThumbnailQuality.DropDownStyle = ComboBoxStyle.DropDownList;
             selectThumbnailQuality.Enabled = false;
             selectThumbnailQuality.FlatStyle = FlatStyle.Flat;
             selectThumbnailQuality.Font = new Font("Tahoma", 9.75F);
+            selectThumbnailQuality.ForeColor = Color.White;
             selectThumbnailQuality.FormattingEnabled = true;
             selectThumbnailQuality.Location = new Point(87, 299);
             selectThumbnailQuality.Name = "selectThumbnailQuality";
@@ -188,11 +194,11 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft YaHei UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(32, 17);
+            label4.Location = new Point(80, 19);
             label4.Name = "label4";
-            label4.Size = new Size(440, 41);
+            label4.Size = new Size(342, 41);
             label4.TabIndex = 12;
-            label4.Text = "Youtube Video Downloader";
+            label4.Text = "Youtube Downloader";
             // 
             // MainForm
             // 

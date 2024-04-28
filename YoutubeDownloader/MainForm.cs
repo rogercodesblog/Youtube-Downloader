@@ -93,7 +93,6 @@ namespace YoutubeDownloader
         }
         //Todo;
         //Let user select file name, or add a (1) / (2) and so on at the end
-        //Verify if a file of same name exists
         private async Task DownloadThumbnail()
         {
             btnDownloadThumbnail.Enabled = false;
@@ -105,7 +104,7 @@ namespace YoutubeDownloader
 
                     var stream = await httpClient.GetStreamAsync(info.Url);
 
-                    //Todo; not all files are jpg, some of them are webp but still work, sort this out.
+                    //Todo; not all files are jpg, some of them are webp but still work somehow
                     string fullfilepath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.jpg");
 
                     string outputFilePath = CreateFileName(fullfilepath);
@@ -125,9 +124,7 @@ namespace YoutubeDownloader
             }
             btnDownloadThumbnail.Enabled = true;
         }
-        //Todo;
-        //Let user select file name, or add a (1) / (2) and so on at the end
-        //Verify if a file of same name exists
+
         private async Task DownloadVideo()
         {
             btnDownloadVideo.Enabled = false;
