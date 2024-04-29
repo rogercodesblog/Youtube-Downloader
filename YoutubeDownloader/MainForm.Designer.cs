@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             txtVideoUrl = new TextBox();
             btnGetVideoData = new Button();
             selectVideoQuality = new ComboBox();
@@ -85,7 +86,7 @@
             selectVideoQuality.Font = new Font("Tahoma", 9.75F);
             selectVideoQuality.ForeColor = Color.White;
             selectVideoQuality.FormattingEnabled = true;
-            selectVideoQuality.Location = new Point(87, 341);
+            selectVideoQuality.Location = new Point(87, 338);
             selectVideoQuality.Name = "selectVideoQuality";
             selectVideoQuality.Size = new Size(314, 24);
             selectVideoQuality.TabIndex = 3;
@@ -112,7 +113,7 @@
             btnDownloadVideo.FlatStyle = FlatStyle.Flat;
             btnDownloadVideo.Font = new Font("Tahoma", 9.75F);
             btnDownloadVideo.ForeColor = Color.White;
-            btnDownloadVideo.Location = new Point(407, 338);
+            btnDownloadVideo.Location = new Point(407, 335);
             btnDownloadVideo.Name = "btnDownloadVideo";
             btnDownloadVideo.Size = new Size(85, 30);
             btnDownloadVideo.TabIndex = 5;
@@ -127,7 +128,7 @@
             imgVideoThumbnail.Image = Properties.Resources.FallBackImage;
             imgVideoThumbnail.Location = new Point(116, 131);
             imgVideoThumbnail.Name = "imgVideoThumbnail";
-            imgVideoThumbnail.Size = new Size(275, 155);
+            imgVideoThumbnail.Size = new Size(275, 145);
             imgVideoThumbnail.SizeMode = PictureBoxSizeMode.StretchImage;
             imgVideoThumbnail.TabIndex = 6;
             imgVideoThumbnail.TabStop = false;
@@ -141,7 +142,7 @@
             btnDownloadThumbnail.FlatStyle = FlatStyle.Flat;
             btnDownloadThumbnail.Font = new Font("Tahoma", 9.75F);
             btnDownloadThumbnail.ForeColor = Color.White;
-            btnDownloadThumbnail.Location = new Point(407, 295);
+            btnDownloadThumbnail.Location = new Point(407, 292);
             btnDownloadThumbnail.Name = "btnDownloadThumbnail";
             btnDownloadThumbnail.Size = new Size(85, 30);
             btnDownloadThumbnail.TabIndex = 8;
@@ -160,7 +161,7 @@
             selectThumbnailQuality.Font = new Font("Tahoma", 9.75F);
             selectThumbnailQuality.ForeColor = Color.White;
             selectThumbnailQuality.FormattingEnabled = true;
-            selectThumbnailQuality.Location = new Point(87, 299);
+            selectThumbnailQuality.Location = new Point(87, 296);
             selectThumbnailQuality.Name = "selectThumbnailQuality";
             selectThumbnailQuality.Size = new Size(314, 24);
             selectThumbnailQuality.TabIndex = 7;
@@ -171,7 +172,7 @@
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Tahoma", 9.75F);
-            label2.Location = new Point(13, 302);
+            label2.Location = new Point(13, 299);
             label2.Name = "label2";
             label2.Size = new Size(72, 16);
             label2.TabIndex = 9;
@@ -182,7 +183,7 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 9.75F);
-            label3.Location = new Point(13, 345);
+            label3.Location = new Point(13, 342);
             label3.Name = "label3";
             label3.Size = new Size(44, 16);
             label3.TabIndex = 10;
@@ -229,6 +230,7 @@
             Controls.Add(btnGetVideoData);
             Controls.Add(txtVideoUrl);
             ForeColor = SystemColors.ControlLightLight;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(520, 420);
             Name = "MainForm";
             Text = "Youtube Downloader";
