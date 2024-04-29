@@ -124,6 +124,7 @@
             // imgVideoThumbnail
             // 
             imgVideoThumbnail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            imgVideoThumbnail.Image = Properties.Resources.FallBackImage;
             imgVideoThumbnail.Location = new Point(116, 131);
             imgVideoThumbnail.Name = "imgVideoThumbnail";
             imgVideoThumbnail.Size = new Size(275, 155);
