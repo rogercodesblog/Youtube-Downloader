@@ -38,7 +38,6 @@ namespace YoutubeDownloader
             DownloadVideo();
         }
 
-        //TODO: Add a CSV for saving configurations and a custom output directory
         private void SetOutputDirectory()
         {
             OutputDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -95,8 +94,7 @@ namespace YoutubeDownloader
             btnGetVideoData.Enabled = true;
             btnGetVideoData.Text = "Get Data";
         }
-        //Todo;
-        //Let user select file name, or add a (1) / (2) and so on at the end
+
         private async Task DownloadThumbnail()
         {
             btnDownloadThumbnail.Enabled = false;
@@ -108,7 +106,6 @@ namespace YoutubeDownloader
 
                     var stream = await httpClient.GetStreamAsync(info.Url);
 
-                    //Todo; not all files are jpg, some of them are webp but still work somehow
                     string fullfilepath = Path.Combine(OutputDirectory, $"{NormalizedTitle}.jpg");
 
                     string outputFilePath = CreateFileName(fullfilepath);
