@@ -59,15 +59,5 @@ namespace YoutubeDownloader.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FallBackImage {
-            get {
-                object obj = ResourceManager.GetObject("FallBackImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

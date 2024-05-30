@@ -86,6 +86,7 @@ namespace YoutubeDownloader
             selectVideoQuality.DataSource = MuxedStreamInfo;
             imgVideoThumbnail.ImageLocation = Video.Thumbnails.FirstOrDefault().Url.Split("?").First();
 
+            panelWaitingForVideoData.Visible = false;
             lblTitle.Visible = true;
             selectThumbnailQuality.Enabled = true;
             selectVideoQuality.Enabled = true;

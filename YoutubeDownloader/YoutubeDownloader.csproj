@@ -9,15 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\FallBackImage.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="YoutubeExplode" Version="6.3.13" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\FallBackImage.jpg" />
   </ItemGroup>
 
   <ItemGroup>
