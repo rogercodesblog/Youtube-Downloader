@@ -1,10 +1,12 @@
-#Youtube Downloader
-Sample Text
-<br/>
-![Main app window](/ReadmeFiles/mainwindow.png)
-<br/>
-Sample Text
-<br/>
-![Window with video information](/ReadmeFiles/window-videoinfo.png)
-<br/>
-Sample Text
+<h1 align="left">Youtube Downloader</h1>
+###
+<p align="left">Sample Text</p>
+<p align="center">
+  <img width="460" height="300" src="/ReadmeFiles/window-videoinfo.png">
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="/ReadmeFiles/window-videoinfo.png">
+</p>
+
+<p>The files are downloaded in the same folder where the program is being executed.</p>
