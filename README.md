@@ -1,7 +1,9 @@
-<h1 align="left">Youtube Downloader</h1>
-###
-<p align="left">I Sample Text</p>
+#Youtube Downloader
+Sample Text
+<br/>
 ![Main app window](/ReadmeFiles/mainwindow.png)
-</br>
+<br/>
+Sample Text
 ![Window with video information](/ReadmeFiles/window-videoinfo.png)
-</br>
+<br/>
+Sample Text
