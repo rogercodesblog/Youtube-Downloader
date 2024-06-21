@@ -40,7 +40,13 @@ namespace YoutubeDownloader
 
         private void SetOutputDirectory()
         {
-            OutputDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            string _currentDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+            string _downloadDirectory = Path.Combine(_currentDirectory, "Downloads");
+            if (!Directory.Exists(_downloadDirectory))
+            {
+                Directory.CreateDirectory(_downloadDirectory);
+            }
+            OutputDirectory = _downloadDirectory;
         }
 
         private async void GetVideoData(string url)
@@ -73,9 +79,28 @@ namespace YoutubeDownloader
 
                 MuxedStreamInfo = streamManifest.GetMuxedStreams().OrderByDescending(video => video.VideoQuality).ToList();
             }
+            catch(HttpRequestException ex)
+            {
+                if(ex.Message== "Response status code does not indicate success: 403 (Forbidden).")
+                {
+                    MessageBox.Show($"The provided video is forbidden and cannot be downloaded.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnGetVideoData.Enabled = true;
+                    btnGetVideoData.Text = "Get Data";
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show($"An error happened while getting the video data, please make sure you have internet connection and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnGetVideoData.Enabled = true;
+                    btnGetVideoData.Text = "Get Data";
+                    return;
+                }
+            }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //This line below is usefull for debugging, but not quite usefull for users
+                //MessageBox.Show($"An error ocurred; \n {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error happened while getting the video data, please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnGetVideoData.Enabled = true;
                 btnGetVideoData.Text = "Get Data";
                 return;
